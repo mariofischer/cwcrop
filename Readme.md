@@ -22,7 +22,8 @@ If you use the default settings, the HTML-code below can simply be used (except 
 - The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields
 
 	#JS
-	var ch = new CwCrop({
+	
+		var ch = new CwCrop({
 			onCrop: function(values) {
 				console.log("crop top left: "+values.x+","+values.y);
 				console.log("crop width height: "+values.w+"x"+values.h);
@@ -39,6 +40,7 @@ If you use the default settings, the HTML-code below can simply be used (except 
 	
 
 	#HTML	
+	
 	<div id="imgouter">
 
 		<div id="cropframe" style="background-image: url('crop-orig.jpg')">
