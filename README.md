@@ -17,7 +17,7 @@ How to use
 
 * [MooTools More 1.2.4](http://mootools.net/more): Drag.* (and its dependences)
 
-If you use the default settings, the HTML-code below can simply be used (except filename and sizes of course):
+If you use the default settings, the HTML-code found in /Demo/ can simply be used (except filename and sizes of course):
 
 - A div-structure where the image is present two times as background image
 - Width and Height are set once
@@ -40,84 +40,10 @@ If you use the default settings, the HTML-code below can simply be used (except 
 
 			}
 		});
-	
-
-	#HTML	
-	
-	&lt;div id="imgouter"&gt;
-
-		&lt;div id="cropframe" style="background-image: url('crop-orig.jpg')"&gt;
-				&lt;div id="draghandle"&gt;&lt;/div&gt;
-				&lt;div id="resizeHandleXY" class="resizeHandle"&gt;&lt;/div&gt;
-				&lt;div id="cropinfo" rel="Click to crop"&gt;
-					&lt;div title="Click to crop" id="cropbtn"&gt;&lt;/div&gt;
-					&lt;div id="cropdims"&gt;&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
 		
-		&lt;div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')"&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div id="formset"&gt;
-
-		&lt;form name="crop" method="post" action="crop_test.php"&gt;
-			&lt;p&gt;
-				&lt;button onclick="ch.doCrop()"&gt;Crop&lt;/button&gt;
-			&lt;/p&gt;
-
-			&lt;input type="hidden" name="crop[x]" value="0" /&gt;
-			&lt;input type="hidden" name="crop[y]" value="0" /&gt;
-			&lt;input type="hidden" name="crop[w]" value="0" /&gt;
-			&lt;input type="hidden" name="crop[h]" value="0" /&gt;
-		&lt;/form&gt;
-		
-	&lt;/div&gt;
+	(See appropriate files in /Demo/ for more information)
 	
-	#CSS
 	
-	\#imgouter \{
-		position: relative; border: none; margin-left: 10px; z-index: 200;
-	\}
-	\#imglayer \{
-		background-color: transparent; background-repeat: no-repeat; opacity: 0.5; z-index: 300; cursor: default;
-		filter:alpha(opacity=50); /* IE 6-7 Trash */
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 Trash */		
-	\}	
-	\#cropframe \{
-		width: 40px; height: 40px; left: 0px; top: 0px;	border: 1px dashed #333333; position: absolute;	z-index: 999; padding: 0px;	background-repeat: no-repeat;
-		-border-image: url('ants.gif') 1 repeat repeat;	-webkit-border-image: url('ants.gif') 1 repeat repeat; -moz-border-image: url('ants.gif') 1 repeat repeat;		
-	\}
-	\#cropframe.active \{
-		border: 1px dashed #ffffff;
-	\}
-	\#cropinfo \{
-		background-color: #cccccc;	opacity: 0.4; top: 0px; left: 0px; height: 32px; position: absolute; z-index: 600;
-		filter:alpha(opacity=40); /* IE 6-7 Trash */
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* IE8 Trash */		
-	\}
-	\#cropdims \{
-		color: #000000; padding: 6px 5px; margin-left: 32px; font-size: 13px; z-index: 500;
-	\}
-	\#cropbtn \{
-		background-image:url('crop.gif'); background-repeat: no-repeat;	position: absolute;	left: 0px; height: 32px; width: 32px; cursor: pointer !important; z-index: 800;
-	\}
-	\#cropbtn:hover \{
-		background-color: black;
-	\}
-	\#draghandle \{
-		background-color: transparent; top: 0; left: 0; width: 100%; height: 100%; margin: 0px; position: absolute;	z-index: 90; cursor: move;
-	\}
-	.resizeHandle \{
-		z-index: 40; opacity: 0.9; background-color: #666666; position: absolute; margin: 0px;	border: 1px solid #ffffff; height: 8px;	width: 8px;
-		filter:alpha(opacity=90); /* IE 6-7 Trash */
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; /* IE8 Trash */
-	\}
-	\#resizeHandleXY \{
-		left: 100%;	top: 100%; cursor: se-resize;
-	\}
-
-
 Options
 ----------
 
