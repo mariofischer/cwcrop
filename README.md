@@ -44,35 +44,35 @@ If you use the default settings, the HTML-code below can simply be used (except 
 
 	#HTML	
 	
-	<div id="imgouter">
+	&lt;div id="imgouter"&gt;
 
-		<div id="cropframe" style="background-image: url('crop-orig.jpg')">
-				<div id="draghandle"></div>
-				<div id="resizeHandleXY" class="resizeHandle"></div>
-				<div id="cropinfo" rel="Click to crop">
-					<div title="Click to crop" id="cropbtn"></div>
-					<div id="cropdims"></div>
-				</div>
-			</div>
+		&lt;div id="cropframe" style="background-image: url('crop-orig.jpg')"&gt;
+				&lt;div id="draghandle"&gt;&lt;/div&gt;
+				&lt;div id="resizeHandleXY" class="resizeHandle"&gt;&lt;/div&gt;
+				&lt;div id="cropinfo" rel="Click to crop"&gt;
+					&lt;div title="Click to crop" id="cropbtn"&gt;&lt;/div&gt;
+					&lt;div id="cropdims"&gt;&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
 		
-		<div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')">
-		</div>
-	</div>
+		&lt;div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 
-	<div id="formset">
+	&lt;div id="formset"&gt;
 
-		<form name="crop" method="post" action="crop_test.php">
-			<p>
-				<button onclick="ch.doCrop()">Crop</button>
-			</p>
+		&lt;form name="crop" method="post" action="crop_test.php"&gt;
+			&lt;p&gt;
+				&lt;button onclick="ch.doCrop()"&gt;Crop&lt;/button&gt;
+			&lt;/p&gt;
 
-			<input type="hidden" name="crop[x]" value="0" />
-			<input type="hidden" name="crop[y]" value="0" />
-			<input type="hidden" name="crop[w]" value="0" />
-			<input type="hidden" name="crop[h]" value="0" />
-		</form>
+			&lt;input type="hidden" name="crop[x]" value="0" /&gt;
+			&lt;input type="hidden" name="crop[y]" value="0" /&gt;
+			&lt;input type="hidden" name="crop[w]" value="0" /&gt;
+			&lt;input type="hidden" name="crop[h]" value="0" /&gt;
+		&lt;/form&gt;
 		
-	</div>
+	&lt;/div&gt;
 	
 	#CSS
 	
