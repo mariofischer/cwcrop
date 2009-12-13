@@ -15,8 +15,20 @@
 <script type="text/javascript">
 var ch,ch2;
 window.addEvent("domready", function() {
-//	ch2 = new MyCrop({originalsize: {x: <?=$width_o ?> , y: <?=$height_o ?>}});
-	ch = new CwCrop();
+		ch = new CwCrop({
+			onCrop: function(values) {
+				console.log("crop top left: "+values.x+","+values.y);
+				console.log("crop width height: "+values.w+"x"+values.h);
+				
+				document.forms["crop"].elements["crop[x]"].value = values.x;
+				document.forms["crop"].elements["crop[y]"].value = values.y;
+				document.forms["crop"].elements["crop[w]"].value = values.w;
+				document.forms["crop"].elements["crop[h]"].value = values.h;
+
+				// document.forms["crop"].submit();
+
+			}
+	});
 });
 
 </script>
@@ -24,7 +36,7 @@ window.addEvent("domready", function() {
 <div class="content-box">
 	<div class="grid-inner">
 		<h1>CwCrop - Javascript Image Crop</h1>
-		<p>
+		<p> 
 			<a href="http://www.chipwreck.de/blog/software">Homepage &raquo;</a>
 		</p>
 		<p>
@@ -72,7 +84,7 @@ window.addEvent("domready", function() {
 	
 			<div id="formset">
 		
-				<form name="crop" method="post" action="crop_test.php">
+				<form name="crop" method="post" action="#">
 					<p>
 						<button onclick="ch.doCrop()">Crop</button>
 					</p>

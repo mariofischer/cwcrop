@@ -18,7 +18,7 @@ provides:
 */
 CwCrop = new Class({
 
-	Implements: [Options],
+	Implements: [Options,Events],
 
 	options: {
 		minsize: {x: 60, y: 60},
@@ -33,7 +33,8 @@ CwCrop = new Class({
 		cropdims: "cropdims",
 		cropbtn: "cropbtn",
 		draghandle: "draghandle",
-		resizehandle: "resizeHandleXY"
+		resizehandle: "resizeHandleXY",
+		onCrop: $empty
 	},
 
 	initialize: function(options)
@@ -219,13 +220,8 @@ CwCrop = new Class({
 		var h = el.getStyle("height").toInt();
 
 		if (x >= 0 && y >= 0 && h >= this.options.minsize.y && w >= this.options.minsize.x) {
-
-			document.forms["crop"].elements["crop[x]"].value = x;
-			document.forms["crop"].elements["crop[y]"].value = y;
-			document.forms["crop"].elements["crop[w]"].value = w;
-			document.forms["crop"].elements["crop[h]"].value = h;
-
-			document.forms["crop"].submit();
+		
+			this.fireEvent('onCrop',{'x':x,'y':y,'w':w,'h':h});
 		}
 	}
 

@@ -5,7 +5,7 @@ Class: CwCrop {#CwCrop}
 
 ### Implements:
 
-Options
+Options, Events
 
 
 
@@ -29,7 +29,6 @@ CwCrop Method: constructor {#CwCrop:constructor}
 ### Options:
 
 * minsize - (**) the minimal size of the rectangle (user can not make it smaller)
-* y - (**)
 * maxsize - (**) the maximal size of the rectangle (user can not make it bigger)
 * initialposition - (**) the initial position of the crop area
 * maxratio - (**) the maximum ratio for x and y
@@ -43,10 +42,13 @@ CwCrop Method: constructor {#CwCrop:constructor}
 * draghandle - (**) id of the div of the drag-handle
 * resizehandle - (**) id of the div of the resize-handle
 
+### Events:
+
+* onCrop - triggered if the user finishes the cropping process, the argument is following object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
+
 ### Returns:
 
 * (*object*) A new *CwCrop* instance.
-
 
 
 CwCrop Method: onStart {#CwCrop:onStart}
@@ -89,32 +91,6 @@ CwCrop Method: onComplete {#CwCrop:onComplete}
 1. el - (**)
 
 
-CwCrop Method: checkRatio {#CwCrop:checkRatio}
------------------------------------------------
-
-
-### Syntax:
-
-
-
-### Arguments:
-
-1. el - (**)
-2. event - (**)
-
-
-CwCrop Method: recalcResize {#CwCrop:recalcResize}
----------------------------------------------------
-
-
-### Syntax:
-
-
-
-### Arguments:
-
-1. el - (**)
-
 
 CwCrop Method: updateCropDims {#CwCrop:updateCropDims}
 -------------------------------------------------------
@@ -133,12 +109,10 @@ CwCrop Method: updateCropDims {#CwCrop:updateCropDims}
 
 
 
-
-
 CwCrop Method: doCrop {#CwCrop:doCrop}
 ---------------------------------------
 
-Writes the rectangle dimensions to the form fields and submits the form
+Fires the onCrop Event
 
 ### Syntax:
 
