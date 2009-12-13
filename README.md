@@ -15,7 +15,7 @@ How to use
 
 ### Requires
 
-* [MooTools More 1.2.4](http://mootools.net/more): Drag.* (and its dependences)
+* [MooTools More 1.2.3](http://mootools.net/more): Drag.* (and its dependences)
 
 If you use the default settings, the HTML-code found in /Demo/ can simply be used (except filename and sizes of course):
 
