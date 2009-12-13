@@ -15,9 +15,8 @@ CwCrop Method: constructor {#CwCrop:constructor}
 
 ### Notes:
 
-- *ScrollSpy* requires MooTools Core only -- no MooTools More dependencies.
-- Visit [http://davidwalsh.name/scrollspy](http://davidwalsh.name/scrollspy) for example usages.
 
+- Visit [http://www.chipwreck.de/blog/software](http://www.chipwreck.de/blog/software) for more information.
 
 
 ### Syntax:
@@ -91,32 +90,6 @@ CwCrop Method: onComplete {#CwCrop:onComplete}
 1. el - (**)
 
 
-CwCrop Method: moveBgImage {#CwCrop:moveBgImage}
--------------------------------------------------
-
-
-### Syntax:
-
-
-
-### Arguments:
-
-1. el - (**)
-
-
-CwCrop Method: antMarching {#CwCrop:antMarching}
--------------------------------------------------
-
-
-### Syntax:
-
-
-
-### Arguments:
-
-1. el - (**)
-
-
 CwCrop Method: checkRatio {#CwCrop:checkRatio}
 -----------------------------------------------
 
@@ -166,8 +139,9 @@ CwCrop Method: updateCropDims {#CwCrop:updateCropDims}
 CwCrop Method: doCrop {#CwCrop:doCrop}
 ---------------------------------------
 
+Writes the rectangle dimensions to the form fields and submits the form
 
 ### Syntax:
 
-
+	myCwCrop.doCrop();
 
