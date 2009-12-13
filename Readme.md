@@ -105,7 +105,8 @@ If you use the default settings, the HTML-code below can simply be used (except 
 		background-color: black;
 	}
 	\#draghandle {
-		background-color: transparent; top: 0; left: 0;	width: 100%; height: 100%; margin: 0px;
+		background-color: transparent;
+		top: 0; left: 0; width: 100%; height: 100%; margin: 0px;
 		position: absolute;	z-index: 90; cursor: move;
 	}
 	.resizeHandle {
@@ -116,7 +117,6 @@ If you use the default settings, the HTML-code below can simply be used (except 
 	\#resizeHandleXY {
 		left: 100%;	top: 100%; cursor: se-resize;
 	}
-
 
 
 Options
@@ -151,4 +151,4 @@ resizehandle: "resizeHandleXY" 		- id of the div of the resize-handle
 Events
 ----------
 
-onCrop								- Triggered if the user clicks "crop", argument is this object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
+onCrop								- Triggered if the user clicks "crop" or if doCrop() is called. The argument is this object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
