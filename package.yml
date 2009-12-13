@@ -2,6 +2,7 @@ name: CwCrop
 author: mario_fischer
 category: Widgets
 tags: [images, crop, pictures]
-#docs: http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/
-#demo: http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/
-#current: 0.66
+docs: http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/
+demo: http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/
+current: 0.67
+
