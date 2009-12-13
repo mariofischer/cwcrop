@@ -72,42 +72,42 @@ If you use the default settings, the HTML-code below can simply be used (except 
 	
 	#CSS
 	
-	#imgouter {
+	\#imgouter {
 		position: relative; border: none; margin-left: 10px; z-index: 200;
 	}
-	#imglayer {
+	\#imglayer {
 		background-color: transparent; background-repeat: no-repeat; opacity: 0.5;
 		filter:alpha(opacity=50); /* IE 6-7 Trash */
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 Trash */
 		z-index: 300; cursor: default;
 	}	
-	#cropframe {
+	\#cropframe {
 		width: 40px; height: 40px; left: 0px; top: 0px;	border: 1px dashed #333333;
 		-border-image: url('ants.gif') 1 repeat repeat;
 		-webkit-border-image: url('ants.gif') 1 repeat repeat;
 		-moz-border-image: url('ants.gif') 1 repeat repeat;
 		position: absolute;	z-index: 999; padding: 0px;	background-repeat: no-repeat;
 	}
-	#cropframe.active {
+	\#cropframe.active {
 		border: 1px dashed #ffffff;
 	}
-	#cropinfo {
+	\#cropinfo {
 		background-color: #cccccc;	opacity: 0.4;
 		filter:alpha(opacity=40); /* IE 6-7 Trash */
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* IE8 Trash */
 		top: 0px; left: 0px; height: 32px; position: absolute; z-index: 600;
 	}
-	#cropdims {
+	\#cropdims {
 		color: #000000; padding: 6px 5px; margin-left: 32px; font-size: 13px; z-index: 500;
 	}
-	#cropbtn {
+	\#cropbtn {
 		background-image:url('crop.gif'); background-repeat: no-repeat;	position: absolute;	left: 0px; height: 32px; width: 32px;
 		cursor: pointer !important; z-index: 800;
 	}
-	#cropbtn:hover {
+	\#cropbtn:hover {
 		background-color: black;
 	}
-	#draghandle {
+	\#draghandle {
 		background-color: transparent; top: 0; left: 0;	width: 100%; height: 100%; margin: 0px; position: absolute;	z-index: 90; cursor: move;
 	}
 	.resizeHandle {
@@ -116,7 +116,7 @@ If you use the default settings, the HTML-code below can simply be used (except 
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; /* IE8 Trash */
 		background-color: #666666; position: absolute; margin: 0px;	border: 1px solid #ffffff; height: 8px;	width: 8px;		
 	}
-	#resizeHandleXY {
+	\#resizeHandleXY {
 		left: 100%;	top: 100%; cursor: se-resize;
 	}
 
