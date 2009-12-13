@@ -17,8 +17,8 @@ var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
 			onCrop: function(values) {
-				console.log("crop top left: "+values.x+","+values.y);
-				console.log("crop width height: "+values.w+"x"+values.h);
+				// console.log("crop top left: "+values.x+","+values.y);
+				// console.log("crop width height: "+values.w+"x"+values.h);
 				
 				document.forms["crop"].elements["crop[x]"].value = values.x;
 				document.forms["crop"].elements["crop[y]"].value = values.y;
@@ -26,7 +26,6 @@ window.addEvent("domready", function() {
 				document.forms["crop"].elements["crop[h]"].value = values.h;
 
 				// document.forms["crop"].submit();
-
 			}
 	});
 });
@@ -46,7 +45,7 @@ window.addEvent("domready", function() {
 		<h3>Works..</h3>
 		<ul>
 			<li>..in Safari 3+, Firefox 3+, IE 6, IE 7, IE 8 and Opera 9+</li>
-			<li>Requires mootools 1.2+ and (for example) PHP to crop the image</li>
+			<li>Requires mootools 1.23+ and (for example) PHP to crop the image</li>
 		</ul>
 		
 		<h3>Features..</h3>
@@ -95,16 +94,6 @@ window.addEvent("domready", function() {
 					<input type="hidden" name="crop[h]" value="0" />
 				</form>
 				
-			</div>
-			
-			<div class="excerpt">
-				<h4>Settings:</h4>
-				<p>
-				Minimum size: x: 90, y: 90<br />
-				Maximum size: x: 200, y: 200<br />
-				Initial position: x: 10, y: 10<br />
-				Ratio constraint:  x: 1.5, y: 1.5
-				</p>
 			</div>
 	</div>
 </div>
