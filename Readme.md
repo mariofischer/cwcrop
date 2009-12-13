@@ -76,26 +76,23 @@ If you use the default settings, the HTML-code below can simply be used (except 
 		position: relative; border: none; margin-left: 10px; z-index: 200;
 	}
 	\#imglayer {
-		background-color: transparent; background-repeat: no-repeat; opacity: 0.5;
+		background-color: transparent; background-repeat: no-repeat; opacity: 0.5; z-index: 300; cursor: default;
 		filter:alpha(opacity=50); /* IE 6-7 Trash */
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 Trash */
-		z-index: 300; cursor: default;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE8 Trash */		
 	}	
 	\#cropframe {
-		width: 40px; height: 40px; left: 0px; top: 0px;	border: 1px dashed #333333;
+		width: 40px; height: 40px; left: 0px; top: 0px;	border: 1px dashed #333333; position: absolute;	z-index: 999; padding: 0px;	background-repeat: no-repeat;
 		-border-image: url('ants.gif') 1 repeat repeat;
 		-webkit-border-image: url('ants.gif') 1 repeat repeat;
-		-moz-border-image: url('ants.gif') 1 repeat repeat;
-		position: absolute;	z-index: 999; padding: 0px;	background-repeat: no-repeat;
+		-moz-border-image: url('ants.gif') 1 repeat repeat;		
 	}
 	\#cropframe.active {
 		border: 1px dashed #ffffff;
 	}
 	\#cropinfo {
-		background-color: #cccccc;	opacity: 0.4;
+		background-color: #cccccc;	opacity: 0.4; top: 0px; left: 0px; height: 32px; position: absolute; z-index: 600;
 		filter:alpha(opacity=40); /* IE 6-7 Trash */
-		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* IE8 Trash */
-		top: 0px; left: 0px; height: 32px; position: absolute; z-index: 600;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* IE8 Trash */		
 	}
 	\#cropdims {
 		color: #000000; padding: 6px 5px; margin-left: 32px; font-size: 13px; z-index: 500;
@@ -108,13 +105,13 @@ If you use the default settings, the HTML-code below can simply be used (except 
 		background-color: black;
 	}
 	\#draghandle {
-		background-color: transparent; top: 0; left: 0;	width: 100%; height: 100%; margin: 0px; position: absolute;	z-index: 90; cursor: move;
+		background-color: transparent; top: 0; left: 0;	width: 100%; height: 100%; margin: 0px;
+		position: absolute;	z-index: 90; cursor: move;
 	}
 	.resizeHandle {
-		z-index: 40; opacity: 0.9;
+		z-index: 40; opacity: 0.9; background-color: #666666; position: absolute; margin: 0px;	border: 1px solid #ffffff; height: 8px;	width: 8px;
 		filter:alpha(opacity=90); /* IE 6-7 Trash */
 		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; /* IE8 Trash */
-		background-color: #666666; position: absolute; margin: 0px;	border: 1px solid #ffffff; height: 8px;	width: 8px;		
 	}
 	\#resizeHandleXY {
 		left: 100%;	top: 100%; cursor: se-resize;
