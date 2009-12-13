@@ -29,21 +29,18 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 
 	#JS
 	
-		var ch = new CwCrop({
+		ch = new CwCrop({
 			onCrop: function(values) {
-				console.log("crop top left: "+values.x+","+values.y);
-				console.log("crop width height: "+values.w+"x"+values.h);
-				
 				document.forms["crop"].elements["crop[x]"].value = values.x;
 				document.forms["crop"].elements["crop[y]"].value = values.y;
 				document.forms["crop"].elements["crop[w]"].value = values.w;
 				document.forms["crop"].elements["crop[h]"].value = values.h;
-
 				// document.forms["crop"].submit();
-
-			}
+			},
+			maxratio: {x: 2, y: 1},
+			fixedratio: false
 		});
-		
+			
 (See appropriate files in /Demo/ or [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) for more information)
 	
 	
@@ -53,6 +50,8 @@ Options
 minsize: {x: 60, y: 60}				- the minimal size of the rectangle (user can not make it smaller)
 
 maxsize: {x: 200, y: 200} 			- the maximal size of the rectangle (user can not make it bigger)
+
+fixedratio: false					- set this to a number if the rectangle should have a fixed ratio (maxratio is ignored then)
 
 initialposition: {x: 10, y: 10} 	- the initial position of the crop area
 

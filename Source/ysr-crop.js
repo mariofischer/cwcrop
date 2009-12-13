@@ -24,6 +24,7 @@ CwCrop = new Class({
 		minsize: {x: 60, y: 60},
 		maxsize: {x: 200, y: 200},
 		initialposition: {x: 10, y: 10},
+		fixedratio: false,
 		maxratio: {x: 2, y: 2},
 		originalsize: {x: 1, y: 1},
 		initialmax: false,
@@ -68,6 +69,10 @@ CwCrop = new Class({
 			$(this.options.cropframe).setStyle("width", this.options.minsize.x);
 			$(this.options.cropframe).setStyle("height", this.options.minsize.y);
 		}
+		if (this.options.fixedratio) {
+			$(this.options.cropframe).setStyle("width", $(this.options.cropframe).getStyle("height").toInt() * this.options.fixedratio);
+		}
+		
 		this.updateCropDims($(this.options.cropframe));		
 
 		this.myMove = new Drag.Move($(this.options.cropframe), {
@@ -151,6 +156,12 @@ CwCrop = new Class({
 	checkRatio: function(el, event)
 	{
 		ratio = el.getStyle("width").toInt() / el.getStyle("height").toInt();
+		if (this.options.fixedratio) {
+			if (ratio != this.options.fixedratio) {
+				el.setStyle("width", el.getStyle("height").toInt() * this.options.fixedratio);
+			}
+			return;
+		}
 		
 		if (event.shift) {
 			if (ratio > 1) {
