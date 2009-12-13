@@ -2,7 +2,7 @@ CwCrop
 ===========
 
 This is a mootools plugin to select a part of an image to crop it (or whatever).
-It provides a draggable and resizable layer above an image and a "crop"-button, which writes the coordinates of the selection to form fields.
+It provides a draggable and resizable layer above an image (showing the current dimensions, optionally) and a "crop"-button, which delivers the coordinates of the selection.
 
 ![Screenshot](http://www.chipwreck.de/blog/wp-content/uploads/2009/10/cwcrop-screenshot.png)
 
