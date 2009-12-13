@@ -32,6 +32,7 @@ CwCrop Method: constructor {#CwCrop:constructor}
 * maxsize - (**) the maximal size of the rectangle (user can not make it bigger)
 * initialposition - (**) the initial position of the crop area
 * maxratio - (**) the maximum ratio for x and y
+* fixedratio: (**) - set this to a numeric value if the rectangle should have a fixed ratio (maxratio is ignored then)
 * originalsize - (**) the ratio of the originalimage vs. the shown image (for example: you crop a thumbnail, but apply the cropping to a much bigger image)
 * initialmax - (**) extend the selection rectangle to the maximum size initially
 * classactive - (**) name of the class which is applied to the cropframe if the user selects it ("active" state..)

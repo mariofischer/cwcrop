@@ -47,22 +47,22 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 Options
 ----------
 
-* minsize: {x: 60, y: 60}				- the minimal size of the rectangle (user can not make it smaller)
-* maxsize: {x: 200, y: 200} 			- the maximal size of the rectangle (user can not make it bigger)
-* fixedratio: false					- set this to a number if the rectangle should have a fixed ratio (maxratio is ignored then)
-* initialposition: {x: 10, y: 10} 	- the initial position of the crop area
-* maxratio: {x: 2, y: 2} 				- the maximum ratio for x and y
-* originalsize: {x: 1, y: 1} 			- the ratio of the originalimage vs. the shown image (for example: you crop a thumbnail, but apply the cropping to a much bigger image)
-* initialmax: false 					- extend the selection rectangle to the maximum size initially
-* classactive: "active" 				- name of the class which is applied to the cropframe if the user selects it ("active" state..)
-* cropframe: "cropframe" 				- id of the outer div
-* imgframe: "imglayer" 				- id of the layer div
-* cropdims: "cropdims" 				- id of the div which shows the current dimension (if empty, dimension is not shown)
-* cropbtn: "cropbtn" 					- id of a div (or something else), which trigger the cropping
-* draghandle: "draghandle" 			- id of the div of the drag-handle
-* resizehandle: "resizeHandleXY" 		- id of the div of the resize-handle
+* minsize: {x: 60, y: 60} - the minimal size of the rectangle (user can not make it smaller)
+* maxsize: {x: 200, y: 200} - the maximal size of the rectangle (user can not make it bigger)
+* fixedratio: false - set this to a number if the rectangle should have a fixed ratio (maxratio is ignored then)
+* initialposition: {x: 10, y: 10} - the initial position of the crop area
+* maxratio: {x: 2, y: 2} - the maximum ratio for x and y
+* originalsize: {x: 1, y: 1} - the ratio of the originalimage vs. the shown image (for example: you crop a thumbnail, but apply the cropping to a much bigger image)
+* initialmax: false - extend the selection rectangle to the maximum size initially
+* classactive: "active" - name of the class which is applied to the cropframe if the user selects it ("active" state..)
+* cropframe: "cropframe" - id of the outer div
+* imgframe: "imglayer" - id of the layer div
+* cropdims: "cropdims" - id of the div which shows the current dimension (if empty, dimension is not shown)
+* cropbtn: "cropbtn" - id of a div (or something else), which trigger the cropping
+* draghandle: "draghandle" - id of the div of the drag-handle
+* resizehandle: "resizeHandleXY" - id of the div of the resize-handle
 
 Events
 ----------
 
-onCrop								- Triggered if the user clicks "crop" or if doCrop() is called. The argument is this object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
+* onCrop - Triggered if the user clicks "crop" or if doCrop() is called. The argument is this object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
