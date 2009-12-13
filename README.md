@@ -8,7 +8,7 @@ It provides a draggable and resizable layer above an image (showing the current 
 
 ### Demo
 
-[http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/](http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/)
+[http://www.chipwreck.de/blog/software/cwcrop/](http://www.chipwreck.de/blog/software/cwcrop/)
 
 How to use
 ----------
