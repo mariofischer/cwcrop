@@ -6,6 +6,11 @@ It provides a draggable and resizable layer above an image and a "crop"-button, 
 
 ![Screenshot](http://www.chipwreck.de/blog/wp-content/uploads/2009/10/cwcrop-screenshot.png)
 
+
+### Demo
+
+* [http://www.chipwreck.de/cwcrop/crop_test.php](http://www.chipwreck.de/cwcrop/crop_test.php)
+
 How to use
 ----------
 
