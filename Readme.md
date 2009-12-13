@@ -22,7 +22,7 @@ If you use the default settings, the HTML-code below can simply be used (except 
 
 - A div-structure where the image is present two times as background image
 - Width and Height are set once
-- A Form to capture the resulting rectangle dimensions (x,y and w,h)
+- Here a form is prepared to capture the resulting rectangle dimensions (x,y and w,h)
 - The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields
 
 	#JS
