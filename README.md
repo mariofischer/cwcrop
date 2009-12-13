@@ -10,6 +10,9 @@ It provides a draggable and resizable layer above an image (showing the current 
 
 [http://www.chipwreck.de/blog/software/cwcrop/](http://www.chipwreck.de/blog/software/cwcrop/)
 
+### Docs
+[http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/)
+
 How to use
 ----------
 
@@ -41,7 +44,7 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 			}
 		});
 		
-	(See appropriate files in /Demo/ for more information)
+(See appropriate files in /Demo/ or http://www.chipwreck.de/blog/software/cwcrop/help/ for more information)
 	
 	
 Options
