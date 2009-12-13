@@ -15,8 +15,7 @@ CwCrop Method: constructor {#CwCrop:constructor}
 
 ### Notes:
 
-
-- Visit [http://www.chipwreck.de/blog/software](http://www.chipwreck.de/blog/software) for more information.
+- Demo is here: [http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/](http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/) 
 
 
 ### Syntax:

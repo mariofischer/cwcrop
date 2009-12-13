@@ -55,6 +55,9 @@ If you use the default settings, the HTML-code below can simply be used (except 
 		
 	</div>
 
+
+Some things are not yet configurable (the form fields for example), this will happen in the next release.
+
 Options
 ----------
 
