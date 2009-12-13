@@ -44,7 +44,7 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 			}
 		});
 		
-(See appropriate files in /Demo/ or http://www.chipwreck.de/blog/software/cwcrop/help/ for more information)
+(See appropriate files in /Demo/ or [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) for more information)
 	
 	
 Options
