@@ -19,10 +19,24 @@ If you use the default settings, the HTML-code below can simply be used (except 
 - A div-structure where the image is present two times as background image
 - Width and Height are set once
 - A Form to capture the resulting rectangle dimensions (x,y and w,h)
-- The method ch.doCrop() writes the dimensions to the form fields
+- The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields
 
 	#JS
-	var ch = new CwCrop();
+	var ch = new CwCrop({
+			onCrop: function(values) {
+				console.log("crop top left: "+values.x+","+values.y);
+				console.log("crop width height: "+values.w+"x"+values.h);
+				
+				document.forms["crop"].elements["crop[x]"].value = values.x;
+				document.forms["crop"].elements["crop[y]"].value = values.y;
+				document.forms["crop"].elements["crop[w]"].value = values.w;
+				document.forms["crop"].elements["crop[h]"].value = values.h;
+
+				// document.forms["crop"].submit();
+
+			}
+		});
+	
 
 	#HTML	
 	<div id="imgouter">
@@ -56,7 +70,6 @@ If you use the default settings, the HTML-code below can simply be used (except 
 	</div>
 
 
-Some things are not yet configurable (the form fields for example), this will happen in the next release.
 
 Options
 ----------
@@ -86,3 +99,8 @@ cropbtn: "cropbtn" 					- id of a div (or something else), which trigger the cro
 draghandle: "draghandle" 			- id of the div of the drag-handle
 
 resizehandle: "resizeHandleXY" 		- id of the div of the resize-handle
+
+Events
+----------
+
+onCrop								- Triggered if the user clicks "crop", argument is this object: {'x': xposition, 'y': yposition, 'w': width, 'h': height}
