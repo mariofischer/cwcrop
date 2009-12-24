@@ -16,15 +16,7 @@
 var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
-			onCrop: function(values) {
-				document.forms["crop"].elements["crop[x]"].value = values.x;
-				document.forms["crop"].elements["crop[y]"].value = values.y;
-				document.forms["crop"].elements["crop[w]"].value = values.w;
-				document.forms["crop"].elements["crop[h]"].value = values.h;
-				// document.forms["crop"].submit();
-			},
-			maxratio: {x: 2, y: 1},
-			fixedratio: false
+			minsize: {x: 100, y: 100}
 		});
 });
 
