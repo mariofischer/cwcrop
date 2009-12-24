@@ -15,7 +15,7 @@ CwCrop Method: constructor {#CwCrop:constructor}
 
 ### Notes:
 
-- Demo can be found here: [http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/](http://www.chipwreck.de/blog/2009/10/26/javascript-only-image-crop/) 
+- Demo can be found here: [http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/](http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/) 
 
 
 ### Syntax:
@@ -28,8 +28,8 @@ CwCrop Method: constructor {#CwCrop:constructor}
 
 ### Options:
 
-* minsize - (**) the minimal size of the rectangle (user can not make it smaller)
-* maxsize - (**) the maximal size of the rectangle (user can not make it bigger)
+* minsize - (**) the minimal size of the resulting image (user can not make it smaller)
+* maxsize - (**) the maximal size of the resulting image (user can not make it bigger)
 * initialposition - (**) the initial position of the crop area
 * maxratio - (**) the maximum ratio for x and y
 * fixedratio: (**) - set this to a numeric value if the rectangle should have a fixed ratio (maxratio is ignored then)

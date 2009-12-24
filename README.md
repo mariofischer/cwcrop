@@ -25,7 +25,7 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 - A div-structure where the image is present two times as background image
 - Width and Height are set once
 - Here a form is prepared to capture the resulting rectangle dimensions (x,y and w,h)
-- The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields
+- The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields and submits it
 
 	#JS
 	
@@ -35,7 +35,7 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 				document.forms["crop"].elements["crop[y]"].value = values.y;
 				document.forms["crop"].elements["crop[w]"].value = values.w;
 				document.forms["crop"].elements["crop[h]"].value = values.h;
-				// document.forms["crop"].submit();
+				document.forms["crop"].submit();
 			},
 			maxratio: {x: 2, y: 1},
 			fixedratio: false
