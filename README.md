@@ -41,5 +41,5 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 			fixedratio: false
 		});
 			
-See [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) or the appropriate files in /Demo/ for more information.
+See [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) for more information.
 			

@@ -15,8 +15,7 @@ CwCrop Method: constructor {#CwCrop:constructor}
 
 ### Notes:
 
-- Demo can be found here: [http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/](http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/) 
-
+- More information, live demo etc. here: [http://www.chipwreck.de/blog/software/cwcrop/](http://www.chipwreck.de/blog/software/cwcrop/) 
 
 ### Syntax:
 
@@ -33,7 +32,7 @@ CwCrop Method: constructor {#CwCrop:constructor}
 * initialposition - (**) the initial position of the crop area
 * maxratio - (**) the maximum ratio for x and y
 * fixedratio: (**) - set this to a numeric value if the rectangle should have a fixed ratio (maxratio is ignored then)
-* originalsize - (**) the ratio of the originalimage vs. the shown image (for example: you crop a thumbnail, but apply the cropping to a much bigger image)
+* originalsize - (**) the size of the originalimage (for example: you crop a thumbnail, but apply the cropping to a much bigger image)
 * initialmax - (**) extend the selection rectangle to the maximum size initially
 * classactive - (**) name of the class which is applied to the cropframe if the user selects it ("active" state..)
 * cropframe - (**) id of the outer div
