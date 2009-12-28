@@ -26,20 +26,19 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 - Width and Height are set once
 - Here a form is prepared to capture the resulting rectangle dimensions (x,y and w,h)
 - The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields and submits it
-
-	#JS
+ #JS
 	
-		ch = new CwCrop({
-			onCrop: function(values) {
-				document.forms["crop"].elements["crop[x]"].value = values.x;
-				document.forms["crop"].elements["crop[y]"].value = values.y;
-				document.forms["crop"].elements["crop[w]"].value = values.w;
-				document.forms["crop"].elements["crop[h]"].value = values.h;
-				document.forms["crop"].submit();
-			},
-			maxratio: {x: 2, y: 1},
-			fixedratio: false
-		});
+  ch = new CwCrop({
+    onCrop: function(values) {
+      document.forms["crop"].elements["crop[x]"].value = values.x;
+      document.forms["crop"].elements["crop[y]"].value = values.y;
+      document.forms["crop"].elements["crop[w]"].value = values.w;
+      document.forms["crop"].elements["crop[h]"].value = values.h;
+      document.forms["crop"].submit();
+    },
+    maxratio: {x: 2, y: 1},
+    fixedratio: false
+  });
 			
 ### More Information
 			
