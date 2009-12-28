@@ -27,7 +27,7 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 - Here a form is prepared to capture the resulting rectangle dimensions: x,y and w,h.
 - The method ch.doCrop triggers the onCrop event, which writes the dimensions to the form fields and submits it.
 
-#JS
+	#JS
 	var ch = new CwCrop({
 		onCrop: function(values) {
 			document.forms["crop"].elements["crop[x]"].value = values.x;
