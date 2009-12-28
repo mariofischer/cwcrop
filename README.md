@@ -8,7 +8,7 @@ It provides a draggable and resizable layer above an image (showing the current 
 
 ### Demo
 
-[http://www.chipwreck.de/blog/software/cwcrop/](http://www.chipwreck.de/blog/software/cwcrop/)
+[http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/](http://www.chipwreck.de/blog/software/cwcrop/cwcrop-demo/)
 
 ### Docs
 [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/)
@@ -18,7 +18,7 @@ How to use
 
 ### Requires
 
-* [MooTools More 1.2.3](http://mootools.net/more): Drag.* (and its dependences)
+* [MooTools More 1.2.3](http://mootools.net/more): Drag.* (and its dependencies)
 
 If you use the default settings, the HTML-code found in /Demo/ can simply be used (except filename and sizes of course):
 
@@ -40,6 +40,8 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 			maxratio: {x: 2, y: 1},
 			fixedratio: false
 		});
+			
+### More Information
 			
 See [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) for more information.
 			

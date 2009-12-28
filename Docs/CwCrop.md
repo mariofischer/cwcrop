@@ -2,11 +2,9 @@ Class: CwCrop {#CwCrop}
 =======================
 
 
-
 ### Implements:
 
 Options, Events
-
 
 
 
