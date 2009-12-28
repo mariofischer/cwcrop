@@ -25,9 +25,9 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 - A div-structure where the image is present two times as background image
 - Width and Height are set once
 - Here a form is prepared to capture the resulting rectangle dimensions (x,y and w,h)
-- The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields and submits it
- #JS
-	
+- The method ch.doCrop() triggers the onCrop event, which writes the dimensions to the form fields and submits it.
+
+	#JS	
 		ch = new CwCrop({
 			onCrop: function(values) {
 				document.forms["crop"].elements["crop[x]"].value = values.x;
@@ -39,8 +39,9 @@ If you use the default settings, the HTML-code found in /Demo/ can simply be use
 			maxratio: {x: 2, y: 1},
 			fixedratio: false
 		});
-			
+	
+	
 ### More Information
-			
+
 See [http://www.chipwreck.de/blog/software/cwcrop/help/](http://www.chipwreck.de/blog/software/cwcrop/help/) for more information.
-			
+	
