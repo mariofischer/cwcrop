@@ -4,6 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="author" content="Mario Fischer" />
+	<link rel="stylesheet" type="text/css" href="ysr-demo.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="ysr-crop.css" media="all" />
 	<script type="text/javascript" src="mootools-1.2.4-core-nc.js"></script>
 	<script type="text/javascript" src="mootools-1.2.4.2-more-nc.js"></script>
@@ -16,75 +17,91 @@
 var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
-			minsize: {x: 50, y: 50}
+			minsize: {x: 95, y: 70},
+			maxratio: {x: 1.5, y: 2.0},
+			onCrop: function(values) {
+    	 	   document.forms["crop"].elements["crop[x]"].value = values.x;
+        		document.forms["crop"].elements["crop[y]"].value = values.y;
+		        document.forms["crop"].elements["crop[w]"].value = values.w;
+		        document.forms["crop"].elements["crop[h]"].value = values.h;
+		        alert("Selected area is: " + values.x + "," + values.y + " @ " + values.w + " x " + values.h);
+		        /*
+		      	Here the form should be submitted usually (instead of the alert..):
+		      	document.forms["crop"].submit();
+		        */
+		    }
 		});
 });
 
 </script>
 
 <div class="content-box">
-	<div class="grid-inner">
-		<h1>CwCrop - Javascript Image Crop</h1>
-		<p> 
-			<a href="http://www.chipwreck.de/blog/software/cwcrop/">Homepage/Documentation/Feedback &raquo;</a>
-		</p>
-		<p>
-			This is a javascript-(mootools)-only tool to select a part of an image to crop it (or whatever).
-		</p>
-		
-		<h3>Works..</h3>
-		<ul>
-			<li>..in Safari 3+, Firefox 3+, IE 6, IE 7, IE 8, Chrome and Opera 9+</li>
-			<li>Requires mootools 1.23+ and (for example) PHP to crop the image</li>
-		</ul>
-		
-		<h3>Features..</h3>
-		<ul>
-			<li>Only 4 DIVs necessary</li>
-			<li>Marching Ants effect via CSS..! <span class="date">(Safari and Firefox of course only)</span></li>
-			<li>Shows crop dimensions (w x h) - and x/y-position while moving <span class="date">(configurable)</span></li>
-			<li>Crop-Button inside the frame <span class="date">(optional)</span></li>
-			<li>Hold <kbd>SHIFT</kbd> to select a square area</li>
-			<li>Also works with scaled images - shows the real size then</li>
-		</ul>
-		<ul>
-			<li>Minimal size, maximal size, initial position and x-/y-ratio constraints are configurable</li>
-			<li>Result: x- and y-position, width and height</li>
-		</ul>
-		
-			<h2>
-				Example to try - hold <em>SHIFT</em> to select a square area:
-			</h2>		
-	
-			<div id="imgouter">
 
-				<div id="cropframe" style="background-image: url('crop-orig.jpg')">
-						<div id="draghandle"></div>
-						<div id="resizeHandleXY" class="resizeHandle"></div>
-						<div id="cropinfo" rel="Click to crop">
-							<div title="Click to crop" id="cropbtn"></div>
-							<div id="cropdims"></div>
-						</div>
-					</div>
-				
-				<div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')">
+	<h1>CwCrop - Javascript Image Crop</h1>
+	<p> 
+		<a href="http://www.chipwreck.de/blog/software/cwcrop/">Homepage/Documentation/Feedback &raquo;</a>
+	</p>
+	<p>
+		This is a javascript-(mootools)-only tool to select a part of an image to crop it (or whatever).
+	</p>
+	
+	<h3>Works..</h3>
+	<ul>
+		<li>..in Safari 3+, Firefox 3+, IE 6, IE 7, IE 8, Chrome and Opera 9+</li>
+		<li>Requires mootools 1.23+ and (for example) PHP to crop the image</li>
+	</ul>
+	
+	<h3>Features..</h3>
+	<ul>
+		<li>Only 4 DIVs necessary</li>
+		<li>Marching Ants effect via CSS..! <span class="date">(Safari and Firefox of course only)</span></li>
+		<li>Shows crop dimensions (w x h) - and x/y-position while moving <span class="date">(configurable)</span></li>
+		<li>Crop-Button inside the frame <span class="date">(optional)</span></li>
+		<li>Hold <kbd>SHIFT</kbd> to select a square area</li>
+		<li>Also works with scaled images - shows the real size then</li>
+	</ul>
+	<ul>
+		<li>A fixed ratio can be configured</li>
+		<li>Minimal size, maximal size, initial position and x-/y-ratio constraints are configurable</li>
+		<li>Result: x- and y-position, width and height</li>
+	</ul>
+	
+	<h2>
+		Example to try - hold <em>SHIFT</em> to select a square area:
+	</h2>	
+
+	<div id="imgouter">
+	
+		<!-- This is the default HTML structure, the cropinfo div can be left out if desired -->
+
+		<div id="cropframe" style="background-image: url('crop-orig.jpg')">
+				<div id="draghandle"></div>
+				<div id="resizeHandleXY" class="resizeHandle"></div>
+				<div id="cropinfo" rel="Click to crop">
+					<div title="Click to crop" id="cropbtn"></div>
+					<div id="cropdims"></div>
 				</div>
 			</div>
+		
+		<div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')">
+		</div>
+	</div>
+
+	<div id="formset">
 	
-			<div id="formset">
+		<!-- example form, the values are written to the hidden fields -->
+
+		<form name="crop" method="post" action="#">
+			<p>
+				<button onclick="ch.doCrop()">Crop</button>
+			</p>
+
+			<input type="hidden" name="crop[x]" value="0" />
+			<input type="hidden" name="crop[y]" value="0" />
+			<input type="hidden" name="crop[w]" value="0" />
+			<input type="hidden" name="crop[h]" value="0" />
+		</form>
 		
-				<form name="crop" method="post" action="#">
-					<p>
-						<button onclick="ch.doCrop()">Crop</button>
-					</p>
-		
-					<input type="hidden" name="crop[x]" value="0" />
-					<input type="hidden" name="crop[y]" value="0" />
-					<input type="hidden" name="crop[w]" value="0" />
-					<input type="hidden" name="crop[h]" value="0" />
-				</form>
-				
-			</div>
 	</div>
 </div>
 
