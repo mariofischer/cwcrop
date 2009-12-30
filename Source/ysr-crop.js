@@ -16,7 +16,7 @@ provides:
   - CwCrop
   
 version:
-  0.70
+  0.71
 ...
 */
 CwCrop = new Class({
@@ -93,6 +93,7 @@ CwCrop = new Class({
 		}
 
 		this.updateCropDims($(this.options.cropframe));
+		this.recalcResize($(this.options.cropframe));
 
 		this.myMove = new Drag.Move($(this.options.cropframe), {
 			style: true,
@@ -158,29 +159,40 @@ CwCrop = new Class({
 
 	checkRatio: function(el, event)
 	{
+		newwidth = 0;
+		newheight = 0;
+	
 		ratio = el.getStyle("width").toInt() / el.getStyle("height").toInt();
+		
 		if (this.options.fixedratio) {
 			if (ratio != this.options.fixedratio) {
-				el.setStyle("width", el.getStyle("height").toInt() * this.options.fixedratio);
+				newwidth = el.getStyle("height").toInt() * this.options.fixedratio;
 			}
-			return;
 		}
-
-		if (event.shift) {
+		else if (event.shift) {
 			if (ratio > 1) {
-				el.setStyle("width", el.getStyle("height").toInt());
+				newwidth = el.getStyle("height").toInt();
 			}
 			else if (ratio < 1) {
-				el.setStyle("height", el.getStyle("width").toInt());
+				newheight = el.getStyle("width").toInt();
 			}
-			return;
 		}
-
-		if (ratio > 1 && ratio > this.options.maxratio.x) {
-			el.setStyle("width", el.getStyle("height").toInt() * this.options.maxratio.x);
+		else {
+			if (ratio > 1 && ratio > this.options.maxratio.x) {
+				newwidth =  el.getStyle("height").toInt() * this.options.maxratio.x;
+			}
+			else if (ratio < 1 && ratio < (1/this.options.maxratio.y)) {
+				newheight = el.getStyle("width").toInt() * this.options.maxratio.y;
+			}
 		}
-		else if (ratio < 1 && ratio < (1/this.options.maxratio.y)) {
-			el.setStyle("height", el.getStyle("width").toInt() * this.options.maxratio.y);
+		if (newwidth > 0 && newwidth < this.limits.x[1]) {
+			el.setStyle("width", newwidth);
+		}
+		else if (newheight > 0 && newheight < this.limits.y[1]) {
+			el.setStyle("height", newheight);
+		}
+		else if (this.options.fixedratio && ratio != this.options.fixedratio) {
+			el.setStyle("height", el.getStyle("width").toInt() / this.options.fixedratio);
 		}
 	},
 
@@ -192,7 +204,8 @@ CwCrop = new Class({
 		this.limits.x[1] = Math.round( Math.min( this.limits.x[1], this.options.maxsize.x ) );
 		this.limits.y[1] = Math.round( Math.min( this.limits.y[1], this.options.maxsize.y ) );
 
-		this.myResizeXY.options.limit = this.limits;
+		if (this.myResizeXY)
+			this.myResizeXY.options.limit = this.limits;
 	},
 
 	updateCropDims: function(el, displayPosition)
