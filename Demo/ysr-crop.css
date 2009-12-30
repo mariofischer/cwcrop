@@ -1,6 +1,10 @@
-/* cwcrop - css file . modify as needed */
-/* Mario Fischer (http://www.chipwreck.de/blog/) */
-
+/*
+	cwcrop - css file . modify as needed
+	
+	More information here: http://www.chipwreck.de/blog/software/cwcrop/
+	@author Mario Fischer <http://www.chipwreck.de/blog/>
+*/
+ 
 #imgouter {
 	position: relative; border: none; margin-left: 10px;
 	z-index: 200;
