@@ -16,7 +16,7 @@ provides:
   - CwCrop
   
 version:
-  0.71
+  0.72
 ...
 */
 CwCrop = new Class({
@@ -42,7 +42,7 @@ CwCrop = new Class({
 		draghandle: "draghandle", // css id for the dragging handle
 		resizehandle: "resizeHandleXY", // css id for the resizing handle
 
-		onCrop: $empty // function to execute if the user crops
+		onCrop: function() {} // function to execute if the user crops
 	},
 
 	initialize: function(options)
