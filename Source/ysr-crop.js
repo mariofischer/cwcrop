@@ -101,7 +101,7 @@ CwCrop = new Class({
 			snap: 1,
 			grid: false,
 			container: $(this.options.imgframe),
-			includeMargins: false,
+			includeMargins: true,
 			checkDroppables: false,
 			handle: $(this.options.draghandle),
 
@@ -154,7 +154,7 @@ CwCrop = new Class({
 
 	moveBgImage: function(el)
 	{
-		el.setStyle("background-position","-" + (el.getStyle("left").toInt() + 1) + "px " + "-" + (el.getStyle("top").toInt() + 1) + "px");
+		el.setStyle("background-position","-" + (el.getStyle("left").toInt() + 0) + "px " + "-" + (el.getStyle("top").toInt() + 0) + "px");
 	},
 
 	checkRatio: function(el, event)
@@ -185,10 +185,10 @@ CwCrop = new Class({
 				newheight = el.getStyle("width").toInt() * this.options.maxratio.y;
 			}
 		}
-		if (newwidth > 0 && newwidth < this.limits.x[1]) {
+		if (newwidth > this.options.minsize.x && newwidth < this.limits.x[1]) {
 			el.setStyle("width", newwidth);
 		}
-		else if (newheight > 0 && newheight < this.limits.y[1]) {
+		else if (newheight > this.options.minsize.y && newheight < this.limits.y[1]) {
 			el.setStyle("height", newheight);
 		}
 		else if (this.options.fixedratio && ratio != this.options.fixedratio) {

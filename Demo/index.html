@@ -19,6 +19,7 @@ window.addEvent("domready", function() {
 		ch = new CwCrop({
 			minsize: {x: 95, y: 70},
 			maxratio: {x: 1.5, y: 2.0},
+			maxsize: {x: 200, y:192},
 			onCrop: function(values) {
     	 	   document.forms["crop"].elements["crop[x]"].value = values.x;
         		document.forms["crop"].elements["crop[y]"].value = values.y;
@@ -61,7 +62,7 @@ window.addEvent("domready", function() {
 		<li>Also works with scaled images - shows the real size then</li>
 	</ul>
 	<ul>
-		<li>A fixed ratio can be configured</li>
+		<li>A fixed or maximum ratio can be configured</li>
 		<li>Minimal size, maximal size, initial position and x-/y-ratio constraints are configurable</li>
 		<li>Result: x- and y-position, width and height</li>
 	</ul>
@@ -81,7 +82,7 @@ window.addEvent("domready", function() {
 				</div>
 			</div>
 		
-		<div id="imglayer" style="width: 200px; height: 192px; background-image: url('crop-orig.jpg')">
+		<div id="imglayer" style="width: 200px; height: 192px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')">
 		</div>
 	</div>
 
