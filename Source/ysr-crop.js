@@ -16,7 +16,7 @@ provides:
   - CwCrop
   
 version:
-  0.76
+  0.8
 ...
 */
 CwCrop = new Class({
