@@ -16,7 +16,7 @@ provides:
   - CwCrop
   
 version:
-  0.8
+  0.9
 ...
 */
 CwCrop = new Class({
@@ -150,6 +150,22 @@ CwCrop = new Class({
 				this.doCrop();
 			}.bind(this));
 		}
+	},
+	
+	createHtml: function(el, imgname)
+	{
+		/*
+		<div id="cropframe" style="background-image: url('crop-orig.jpg')">
+			<div id="draghandle"></div>
+			<div id="resizeHandleXY" class="resizeHandle"></div>
+			<div id="cropinfo" rel="Click to crop">
+				<div title="Click to crop" id="cropbtn"></div>
+				<div id="cropdims"></div>
+			</div>
+		</div>
+		
+		<div id="imglayer" style="width: 200px; height: 192px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
+		*/
 	},
 
 	moveBgImage: function(el)
