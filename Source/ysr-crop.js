@@ -154,7 +154,7 @@ CwCrop = new Class({
 
 	moveBgImage: function(el)
 	{
-		el.setStyle("background-position","-" + (el.getStyle("left").toInt() + 0) + "px " + "-" + (el.getStyle("top").toInt() + 0) + "px");
+		el.setStyle("background-position","-" + (el.getStyle("left").toInt()) + "px " + "-" + (el.getStyle("top").toInt()) + "px");
 	},
 
 	checkRatio: function(el, event)
@@ -169,7 +169,14 @@ CwCrop = new Class({
 				newwidth = el.getStyle("height").toInt() * this.options.fixedratio;
 			}
 		}
-		else if (event.shift) {
+		else if (event.shift
+							&& (
+									(!this.options.maxratio.x && !this.options.maxratio.y)
+									|| (!this.options.maxratio.x && this.options.maxratio.y >= 1)
+									|| (this.options.maxratio.x >= 1 && !this.options.maxratio.y)
+									|| (this.options.maxratio.x >= 1 && this.options.maxratio.y >= 1)
+									)
+						) {
 			if (ratio > 1) {
 				newwidth = el.getStyle("height").toInt();
 			}
@@ -185,10 +192,11 @@ CwCrop = new Class({
 				newheight = el.getStyle("width").toInt() * this.options.maxratio.y;
 			}
 		}
-		if (newwidth > this.options.minsize.x && newwidth < this.limits.x[1]) {
+		
+		if (newwidth > this.limits.x[0] && newwidth < this.limits.x[1]) {
 			el.setStyle("width", newwidth);
 		}
-		else if (newheight > this.options.minsize.y && newheight < this.limits.y[1]) {
+		else if (newheight > this.limits.y[0] && newheight < this.limits.y[1]) {
 			el.setStyle("height", newheight);
 		}
 		else if (this.options.fixedratio && ratio != this.options.fixedratio) {

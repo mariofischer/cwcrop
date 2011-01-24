@@ -17,8 +17,8 @@
 var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
-			minsize: {x: 95, y: 70},
-			maxratio: {x: 1.5, y: 2.0},
+			minsize: {x: 60, y: 60},
+			maxratio: {x: 1.5, y: 1},
 			maxsize: {x: 200, y:192},
 			onCrop: function(values) {
     	 	   document.forms["crop"].elements["crop[x]"].value = values.x;
