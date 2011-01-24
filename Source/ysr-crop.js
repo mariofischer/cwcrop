@@ -169,14 +169,8 @@ CwCrop = new Class({
 				newwidth = el.getStyle("height").toInt() * this.options.fixedratio;
 			}
 		}
-		else if (event.shift
-							&& (
-									(!this.options.maxratio.x && !this.options.maxratio.y)
-									|| (!this.options.maxratio.x && this.options.maxratio.y >= 1)
-									|| (this.options.maxratio.x >= 1 && !this.options.maxratio.y)
-									|| (this.options.maxratio.x >= 1 && this.options.maxratio.y >= 1)
-									)
-						) {
+		else if (event.shift && ( (!this.options.maxratio.x && !this.options.maxratio.y) || (!this.options.maxratio.x && this.options.maxratio.y >= 1) || (this.options.maxratio.x >= 1 && !this.options.maxratio.y) || (this.options.maxratio.x >= 1 && this.options.maxratio.y >= 1) ))
+		{
 			if (ratio > 1) {
 				newwidth = el.getStyle("height").toInt();
 			}
@@ -212,8 +206,9 @@ CwCrop = new Class({
 		this.limits.x[1] = Math.round( Math.min( this.limits.x[1], this.options.maxsize.x ) );
 		this.limits.y[1] = Math.round( Math.min( this.limits.y[1], this.options.maxsize.y ) );
 
-		if (this.myResizeXY)
+		if (this.myResizeXY) {
 			this.myResizeXY.options.limit = this.limits;
+		}
 	},
 
 	updateCropDims: function(el, displayPosition)
