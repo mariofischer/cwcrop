@@ -16,7 +16,7 @@ provides:
   - CwCrop
   
 version:
-  0.9
+  0.95
 ...
 */
 CwCrop = new Class({
@@ -83,8 +83,8 @@ CwCrop = new Class({
 			$(this.options.cropframe).setStyle("height", this.limits.y[1].toInt());
 		}
 		else {
-			$(this.options.cropframe).setStyle("top", this.options.initialposition.x);
-			$(this.options.cropframe).setStyle("left", this.options.initialposition.y);
+			$(this.options.cropframe).setStyle("top", this.options.initialposition.y);
+			$(this.options.cropframe).setStyle("left", this.options.initialposition.x);
 			$(this.options.cropframe).setStyle("width", this.limits.x[0].toInt());
 			$(this.options.cropframe).setStyle("height", this.limits.y[0].toInt());
 		}
