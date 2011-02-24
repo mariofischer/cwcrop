@@ -55,7 +55,7 @@ CwCrop = new Class({
 
 		// calc initial limits and scaling
 		this.elemsize = $(this.options.imgframe).getSize();
-		if (this.elemsize.x == 0) {
+		if (this.elemsize.x === 0) {
 			this.elemsize = $(this.options.imgframe).getOffsetParent().getSize();
 		}
 
@@ -175,10 +175,10 @@ CwCrop = new Class({
 
 	checkRatio: function(el, event)
 	{
-		newwidth = 0;
-		newheight = 0;
+		var newwidth = 0;
+		var newheight = 0;
 	
-		ratio = el.getStyle("width").toInt() / el.getStyle("height").toInt();
+		var ratio = el.getStyle("width").toInt() / el.getStyle("height").toInt();
 		
 		if (this.options.fixedratio) {
 			if (ratio != this.options.fixedratio) {
@@ -248,7 +248,7 @@ CwCrop = new Class({
 
 	doCrop: function()
 	{
-		el = $(this.options.cropframe);
+		var el = $(this.options.cropframe);
 
 		var x = Math.round( el.getStyle("left").toInt() * this.orig_to_scaled.x );
 		var y = Math.round( el.getStyle("top").toInt() * this.orig_to_scaled.y );
