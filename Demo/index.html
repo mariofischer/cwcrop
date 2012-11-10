@@ -17,9 +17,9 @@
 var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
-			minsize: {x: 60, y: 60},
-			maxratio: {x: 1.5, y: 1.5},
-			maxsize: {x: 200, y:192},
+			minsize: {x: 430, y: 260},
+			fixedratio: 1.653846,
+			maxsize: {x:999,y:999},
 			onCrop: function(values) {
     	 	   document.forms["crop"].elements["crop[x]"].value = values.x;
         		document.forms["crop"].elements["crop[y]"].value = values.y;
@@ -82,7 +82,7 @@ window.addEvent("domready", function() {
 				</div>
 			</div>
 		
-		<div id="imglayer" style="width: 200px; height: 192px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
+		<div id="imglayer" style="width: 800px; height: 600px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
 	</div>
 
 	<div id="formset">
