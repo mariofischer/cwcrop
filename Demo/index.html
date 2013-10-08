@@ -17,9 +17,9 @@
 var ch;
 window.addEvent("domready", function() {
 		ch = new CwCrop({
-			minsize: {x: 430, y: 260},
-			fixedratio: 1.653846,
-			maxsize: {x:999,y:999},
+			maxratio: {x: 1.5, y: 1.5},
+			minsize: {x: 90, y: 90},
+			maxsize: {x: 200, y: 200},
 			onCrop: function(values) {
     	 	   document.forms["crop"].elements["crop[x]"].value = values.x;
         		document.forms["crop"].elements["crop[y]"].value = values.y;
@@ -42,16 +42,16 @@ window.addEvent("domready", function() {
 	<p>
 		This is a javascript-(mootools)-only tool to select a part of an image to crop it (or whatever).
 	</p>
-	<p> 
+	<p>
 		For more information: <a href="http://www.chipwreck.de/blog/software/cwcrop/">Homepage/Documentation/Feedback &raquo;</a>
 	</p>
-	
+
 	<h4>Works..</h4>
 	<ul>
 		<li>..in Safari 3+, Firefox 3+, IE 6, IE 7, IE 8, Chrome and Opera 9+</li>
 		<li>Requires mootools 1.23+ and (for example) PHP to crop the image</li>
 	</ul>
-	
+
 	<h4>Features..</h4>
 	<ul>
 		<li>Only 4 DIVs necessary</li>
@@ -66,11 +66,11 @@ window.addEvent("domready", function() {
 		<li>Minimal size, maximal size, initial position and x-/y-ratio constraints are configurable</li>
 		<li>Result: x- and y-position, width and height</li>
 	</ul>
-	
-	<h3>Example to try - hold <em>SHIFT</em> to select a square area:</h3>	
+
+	<h3>Example to try - hold <em>SHIFT</em> to select a square area:</h3>
 
 	<div id="imgouter">
-	
+
 		<!-- This is the default HTML structure, the cropinfo div can be left out if desired -->
 
 		<div id="cropframe" style="background-image: url('crop-orig.jpg')">
@@ -81,12 +81,12 @@ window.addEvent("domready", function() {
 					<div id="cropdims"></div>
 				</div>
 			</div>
-		
-		<div id="imglayer" style="width: 800px; height: 600px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
+
+		<div id="imglayer" style="width: 400px; height: 300px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
 	</div>
 
 	<div id="formset">
-	
+
 		<!-- example form, the values are written to the hidden fields -->
 
 		<form name="crop" method="post" action="#">
@@ -99,12 +99,12 @@ window.addEvent("domready", function() {
 			<input type="hidden" name="crop[w]" value="0" />
 			<input type="hidden" name="crop[h]" value="0" />
 		</form>
-		
+
 	</div>
-	
+
 	<p><small>Written by Mario Fischer 2009-2011, <a href="http://www.chipwreck.de/blog/">chipwreck.de &raquo;</a></small></p>
 </div>
 
-	
+
 </body>
 </html>

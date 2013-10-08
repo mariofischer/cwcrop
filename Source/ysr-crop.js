@@ -14,9 +14,9 @@ requires:
 
 provides:
   - CwCrop
-  
+
 version:
-  0.95
+  1.0
 ...
 */
 CwCrop = new Class({
@@ -151,7 +151,7 @@ CwCrop = new Class({
 			}.bind(this));
 		}
 	},
-	
+
 	createHtml: function(el, imgname)
 	{
 		/*
@@ -163,7 +163,7 @@ CwCrop = new Class({
 				<div id="cropdims"></div>
 			</div>
 		</div>
-		
+
 		<div id="imglayer" style="width: 200px; height: 192px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
 		*/
 	},
@@ -177,9 +177,9 @@ CwCrop = new Class({
 	{
 		var newwidth = 0;
 		var newheight = 0;
-	
+
 		var ratio = el.getStyle("width").toInt() / el.getStyle("height").toInt();
-		
+
 		if (this.options.fixedratio) {
 			if (ratio != this.options.fixedratio) {
 				newwidth = el.getStyle("height").toInt() * this.options.fixedratio;
@@ -202,7 +202,7 @@ CwCrop = new Class({
 				newheight = el.getStyle("width").toInt() * this.options.maxratio.y;
 			}
 		}
-		
+
 		if (newwidth > this.limits.x[0] && newwidth < this.limits.x[1]) {
 			el.setStyle("width", newwidth);
 		}
