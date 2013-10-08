@@ -27,7 +27,8 @@ window.addEvent("domready", function() {
 		        document.forms["crop"].elements["crop[h]"].value = values.h;
 		        alert("Selected area is: " + values.x + "," + values.y + " @ " + values.w + " x " + values.h);
 		        /*
-		      	Here the form should be submitted usually (instead of the alert..):
+		      	Here you should usually submit the form (instead of the alert..), like this:
+
 		      	document.forms["crop"].submit();
 		        */
 		    }
@@ -48,7 +49,7 @@ window.addEvent("domready", function() {
 
 	<h4>Works..</h4>
 	<ul>
-		<li>..in Safari 3+, Firefox 3+, IE 6, IE 7, IE 8, Chrome and Opera 9+</li>
+		<li>..in Safari 3+, Firefox 3+, IE 6/7/8/9, Chrome and Opera 9+</li>
 		<li>Requires mootools 1.23+ and (for example) PHP to crop the image</li>
 	</ul>
 
@@ -82,6 +83,7 @@ window.addEvent("domready", function() {
 				</div>
 			</div>
 
+
 		<div id="imglayer" style="width: 400px; height: 300px; padding: 1px; background-position: center center; background-image: url('crop-orig.jpg')"></div>
 	</div>
 
@@ -102,7 +104,8 @@ window.addEvent("domready", function() {
 
 	</div>
 
-	<p><small>Written by Mario Fischer 2009-2011, <a href="http://www.chipwreck.de/blog/">chipwreck.de &raquo;</a></small></p>
+	<p><small>Written by Mario Fischer 2009-2013, <a href="http://www.chipwreck.de/blog/">chipwreck.de &raquo;</a></small></p>
+
 </div>
 
 
