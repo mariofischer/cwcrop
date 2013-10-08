@@ -17,7 +17,7 @@ provides:
 
 version:
   1.0
-...
+
 */
 CwCrop = new Class({
 
@@ -55,7 +55,7 @@ CwCrop = new Class({
 
 		// calc initial limits and scaling
 		this.elemsize = $(this.options.imgframe).getSize();
-		if (this.elemsize.x === 0) {
+		if (this.elemsize.x == 0) {
 			this.elemsize = $(this.options.imgframe).getOffsetParent().getSize();
 		}
 
