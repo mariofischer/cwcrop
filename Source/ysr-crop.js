@@ -55,7 +55,11 @@ CwCrop = new Class({
 		}
 
 		// calc initial limits and scaling
-		this.elemsize = $(this.options.imgframe).getSize();
+		var elemcomputedsize = $(this.options.imgframe).getComputedSize();
+		this.elemsize = {
+				x: elemcomputedsize.width,
+				y: elemcomputedsize.height
+			};
 		if (this.elemsize.x == 0) {
 			this.elemsize = $(this.options.imgframe).getOffsetParent().getSize();
 		}
