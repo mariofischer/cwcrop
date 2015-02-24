@@ -70,6 +70,9 @@ CwCrop = new Class({
 			this.orig_to_scaled.y = this.options.originalsize.y / this.elemsize.y;
 		}
 
+		var orig_minsize_x = this.options.minsize.x; // save original values
+		var orig_minsize_y = this.options.minsize.y;
+
 		this.options.maxsize.x = ( this.options.maxsize.x * (1/this.orig_to_scaled.x) ).limit(1, this.elemsize.x-2);
 		this.options.maxsize.y = ( this.options.maxsize.y * (1/this.orig_to_scaled.y) ).limit(1, this.elemsize.y-2);
 		this.options.minsize.x = ( this.options.minsize.x * (1/this.orig_to_scaled.x) ).limit(1, this.elemsize.x-2);
@@ -90,8 +93,8 @@ CwCrop = new Class({
 		else {
 			$(this.options.cropframe).setStyle("top", this.options.initialposition.y);
 			$(this.options.cropframe).setStyle("left", this.options.initialposition.x);
-			$(this.options.cropframe).setStyle("width", this.limits.x[0].toInt());
-			$(this.options.cropframe).setStyle("height", this.limits.y[0].toInt());
+			$(this.options.cropframe).setStyle("width", orig_minsize_x.toInt());
+			$(this.options.cropframe).setStyle("height", orig_minsize_y.toInt());
 		}
 		if (this.options.fixedratio) {
 			$(this.options.cropframe).setStyle("width", $(this.options.cropframe).getStyle("height").toInt() * this.options.fixedratio);
